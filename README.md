@@ -1,56 +1,81 @@
-### Step Flow Deploy Project
+# Face Similarity API
 
-Berikut adalah langkah-langkah untuk deploy project Django:
+## Introduction
 
-#### Buka terminal/command prompt, kemudian ikuti langkah-langkah dibawah
+Welcome to the Face Similarity API project! The Face Similarity API is designed to measure the similarity between a facial photo (e.g., ID card, driver's license, passport) and an input photo. This API provides a convenient way to assess the likeness of faces and is useful for various applications, including identity verification and facial recognition.
 
-Buat virtual environment menggunakan kode dibawah:
+## Features
+
+The Face Similarity API offers the following key features:
+
+- **Face Comparison**: Compare a reference facial photo (e.g., an official ID) with an input facial photo to determine the degree of similarity.
+- **Scalable**: The API can handle a wide range of input images and is suitable for both small-scale and large-scale applications.
+- **Accurate**: Utilizes advanced facial recognition algorithms to provide accurate similarity scores.
+
+
+### Step  to use
+
+Here step to use the project, this project use django as frame work
+
+#### Open a Terminal/Command Prompt and Follow the Steps Below
+
+
+Create a virtual environment using the following command:
+
 
 ```
 python -m venv venv
 ```
 
-Kemudian aktifkan venv yang telah dibuat
+Activate the created virtual environment:
+
 
 ```
 .\venv\Scripts\activate
 ```
 
-Lakukan upgrade Pip
+Upgrade Pip
 
-Pastikan pip Anda sudah dalam versi terbaru. Anda dapat menggunakan perintah berikut untuk memeriksa versi pip:
 
-Jika pip Anda belum dalam versi terbaru, Anda dapat mengupgradenya dengan perintah berikut:
+Ensure that your Pip is up to date. You can check your Pip version using the following command:
 
 ```
 python -m pip install --upgrade pip
 ```
 
-Kemudian silahkan install requirements.txt
+Install the requirements from requirements.txt:
+
 ``` 
-pip install .\image-project-mknows\requirements.txt
+pip install -r requirements.txt
 ```
 
 Lalu pindah ke directory project
 ```
-cd .\image-project-mknows\image_project\
+cd .\image_project\
 ```
-
-Kemudian lakukan migration untuk membuat tabel.
-Untuk membuat migrations, Anda dapat menggunakan perintah berikut:
+Perform migrations to create database tables. To create migrations, use the following command:
 
 ```
 python manage.py makemigrations
 ``` 
-Setelah membuat migrations, Anda perlu menjalankan migrations untuk menerapkan perubahan pada database.
+After creating migrations, apply them to the database using the following command:
+
 ```
 python manage.py migrate --run-syncdb
 ```
-Setelah migrations dijalankan, Anda dapat menjalankan server Django.
 
-Untuk menjalankan server Django, Anda dapat menggunakan perintah berikut:
+Once the migrations are applied, you can run the Django server. To start the Django server, use the following command:
+
 ```
 python manage.py runserver
 ```
 
-Selamat project telah sukses di deploy.
+To input the first image:
+```
+http://127.0.0.1:8000/fsim/upload-anchor/
+```
+
+To Predist similarity:
+```
+http://127.0.0.1:8000/fsim/predict-similarity/
+```
