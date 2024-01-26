@@ -49,7 +49,7 @@ Install the requirements from requirements.txt:
 pip install -r requirements.txt
 ```
 
-Lalu pindah ke directory project
+Move to directory project
 ```
 cd .\image_project\
 ```
